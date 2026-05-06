@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://83f65mthf26i"]
+
+[ext_resource type="Script" uid="uid://c2adt5pq1jpt5" path="res://Scripts/Logger/LoggerTest.cs" id="1_g1goj"]
+[ext_resource type="Theme" uid="uid://2pfvbcslrju3" path="res://Assets/UtilsTheme.tres" id="2_ojkqu"]
+
+[node name="01_Logger" type="Node2D" unique_id=1669379984 node_paths=PackedStringArray("messageColorPickerBtn", "messageLineEdit", "customLogBtn", "errorLogBtn", "warningLogBtn", "infoLogBtn")]
+script = ExtResource("1_g1goj")
+messageColorPickerBtn = NodePath("CanvasLayer/TextBox/ColorPickerButton")
+messageLineEdit = NodePath("CanvasLayer/TextBox/LineEdit")
+customLogBtn = NodePath("CanvasLayer/Buttons/LogMsg")
+errorLogBtn = NodePath("CanvasLayer/Buttons/LogError")
+warningLogBtn = NodePath("CanvasLayer/Buttons/LogWarning")
+infoLogBtn = NodePath("CanvasLayer/Buttons/LogInfo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=24244569]
+follow_viewport_enabled = true
+
+[node name="BackgroundBlocker" type="ColorRect" parent="CanvasLayer" unique_id=759654453]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11119685, 0.11119684, 0.11119684, 1)
+
+[node name="Info" type="RichTextLabel" parent="CanvasLayer" unique_id=812292345]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.5
+offset_top = -260.0
+offset_right = 576.5
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[pulse]Check console to see output from the logger![/pulse]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBox" type="HBoxContainer" parent="CanvasLayer" unique_id=972979951]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -66.0
+offset_right = 300.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="CanvasLayer/TextBox" unique_id=1084313555]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("2_ojkqu")
+color = Color(1, 1, 1, 1)
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/TextBox" unique_id=1501286272]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme = ExtResource("2_ojkqu")
+placeholder_text = "Write your custom message"
+
+[node name="Buttons" type="VBoxContainer" parent="CanvasLayer" unique_id=1010601559]
+custom_minimum_size = Vector2(400, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 35.0
+offset_right = 200.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LogMsg" type="Button" parent="CanvasLayer/Buttons" unique_id=1821886212]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_ojkqu")
+text = "Print as Msg"
+
+[node name="LogError" type="Button" parent="CanvasLayer/Buttons" unique_id=1806069840]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_ojkqu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Buttons/LogError" unique_id=1488722015]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "[img=24]res://Assets/Icons/Error.svg[/img]	Print as Error"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LogWarning" type="Button" parent="CanvasLayer/Buttons" unique_id=1780778346]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_ojkqu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Buttons/LogWarning" unique_id=2096014257]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "[img=24]res://Assets/Icons/Warning.svg[/img]	Print as Warning"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LogInfo" type="Button" parent="CanvasLayer/Buttons" unique_id=32316643]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("2_ojkqu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Buttons/LogInfo" unique_id=1425643452]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "[img=24]res://Assets/Icons/Info.svg[/img]	Print as Info"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
