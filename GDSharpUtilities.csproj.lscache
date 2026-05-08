@@ -55,10 +55,19 @@ TemporaryDependencyNodeTargetIdentifier=net8.0
 .godot/mono/temp/obj/Debug/
  .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
  GDSharpUtilities.AssemblyInfo.cs
-Scripts/Logger/
- Log.cs
- LoggerTest.cs
- LogMessage.cs
+Scripts/
+ Common/CanvasUtils.cs
+ Debug/
+  AutoComplete.cs
+  CommandHistory.cs
+  ConsoleCommands.cs
+  DebugConsole.cs
+ Logger/
+  Log.cs
+  LogMessage.cs
+ Tests/
+  DebugConsoleTest.cs
+  LoggerTest.cs
 
 [metadataReferences]
 <DOTNET>/packs/Microsoft.NETCore.App.Ref/8.0.26/ref/net8.0/

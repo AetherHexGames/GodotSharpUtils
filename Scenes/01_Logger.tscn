@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://83f65mthf26i"]
 
-[ext_resource type="Script" uid="uid://c2adt5pq1jpt5" path="res://Scripts/Logger/LoggerTest.cs" id="1_g1goj"]
+[ext_resource type="Script" uid="uid://c2adt5pq1jpt5" path="res://Scripts/Tests/LoggerTest.cs" id="1_g1goj"]
 [ext_resource type="Theme" uid="uid://2pfvbcslrju3" path="res://Assets/UtilsTheme.tres" id="2_ojkqu"]
 
 [node name="01_Logger" type="Node2D" unique_id=1669379984 node_paths=PackedStringArray("messageColorPickerBtn", "messageLineEdit", "customLogBtn", "errorLogBtn", "warningLogBtn", "infoLogBtn")]

@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://blyrqetokm0br"]
+
+[ext_resource type="Script" uid="uid://bte1oofptss6m" path="res://Scripts/Debug/DebugConsole.cs" id="1_d6osc"]
+[ext_resource type="Theme" uid="uid://2pfvbcslrju3" path="res://Assets/UtilsTheme.tres" id="2_7p74g"]
+
+[node name="DeveloperConsole" type="CanvasLayer" unique_id=1564198903 node_paths=PackedStringArray("toggleDebugButton", "consoleContainer", "lineEdit", "output", "extraControls", "timeScaleSlider", "timeScaleValue")]
+layer = 127
+script = ExtResource("1_d6osc")
+toggleDebugButton = NodePath("Button")
+consoleContainer = NodePath("MarginContainer")
+lineEdit = NodePath("MarginContainer/Contents/LineEdit")
+output = NodePath("MarginContainer/Contents/Console")
+extraControls = NodePath("ExtraControls")
+timeScaleSlider = NodePath("ExtraControls/VBoxContainer/Label/TimeSlider")
+timeScaleValue = NodePath("ExtraControls/VBoxContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=709747705]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -328.0
+offset_right = 775.0
+offset_bottom = -22.0
+grow_vertical = 0
+theme = ExtResource("2_7p74g")
+
+[node name="Background" type="ColorRect" parent="MarginContainer" unique_id=1085901745]
+layout_mode = 2
+theme = ExtResource("2_7p74g")
+color = Color(0, 0, 0, 0.5294118)
+
+[node name="Contents" type="VBoxContainer" parent="MarginContainer" unique_id=617615812]
+layout_mode = 2
+theme = ExtResource("2_7p74g")
+
+[node name="Console" type="RichTextLabel" parent="MarginContainer/Contents" unique_id=1932318248]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+theme = ExtResource("2_7p74g")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/Contents" unique_id=1132349280]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme = ExtResource("2_7p74g")
+caret_blink = true
+
+[node name="Button" type="Button" parent="." unique_id=190475837]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 168.0
+offset_bottom = 64.0
+theme = ExtResource("2_7p74g")
+theme_override_font_sizes/font_size = 25
+text = "Debug"
+
+[node name="ExtraControls" type="Control" parent="." unique_id=1574521914]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 448.0
+offset_bottom = 144.0
+theme = ExtResource("2_7p74g")
+
+[node name="Time Scale" type="ColorRect" parent="ExtraControls" unique_id=562818729]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_7p74g")
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ExtraControls" unique_id=1735352513]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ExtraControls/VBoxContainer" unique_id=413751958]
+layout_mode = 2
+theme = ExtResource("2_7p74g")
+theme_override_font_sizes/font_size = 24
+text = "Time scale"
+vertical_alignment = 1
+
+[node name="TimeSlider" type="HSlider" parent="ExtraControls/VBoxContainer/Label" unique_id=1089472124]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -12.0
+offset_right = -8.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_7p74g")
+max_value = 1.0
+step = 0.1
+value = 1.0

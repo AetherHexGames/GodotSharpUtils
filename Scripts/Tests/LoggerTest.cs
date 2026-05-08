@@ -1,7 +1,6 @@
 using Godot;
-using System;
 
-namespace AetherHex.Utils.Logger
+namespace AetherHex.Utils.Logger.Tests
 {
 	public partial class LoggerTest : Node
 	{
