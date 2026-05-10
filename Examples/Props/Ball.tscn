@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bvu4m3p5r5v25"]
+
+[ext_resource type="Script" uid="uid://3axvwg80ypqf" path="res://Examples/Scripts/Ball.cs" id="1_tobs6"]
+
+[sub_resource type="Gradient" id="Gradient_bvkth"]
+offsets = PackedFloat32Array(0.5681818, 0.93421054)
+colors = PackedColorArray(0.28627452, 0.7882353, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_70p3e"]
+gradient = SubResource("Gradient_bvkth")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.56837606, 0.3974359)
+
+[node name="Ball" type="Node2D" unique_id=1852177746]
+script = ExtResource("1_tobs6")
+
+[node name="Timer" type="Timer" parent="." unique_id=1801504621]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1663756702]
+texture = SubResource("GradientTexture2D_70p3e")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="timeout" from="Timer" to="." method="end_of_lifetime"]

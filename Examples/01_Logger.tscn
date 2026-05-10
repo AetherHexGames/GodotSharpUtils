@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://83f65mthf26i"]
 
-[ext_resource type="Script" uid="uid://c2adt5pq1jpt5" path="res://Scripts/Tests/LoggerTest.cs" id="1_g1goj"]
-[ext_resource type="Theme" uid="uid://2pfvbcslrju3" path="res://Assets/UtilsTheme.tres" id="2_ojkqu"]
+[ext_resource type="Script" uid="uid://c2adt5pq1jpt5" path="res://Examples/Scripts/LoggerTest.cs" id="1_b8b04"]
+[ext_resource type="Theme" uid="uid://2pfvbcslrju3" path="res://Assets/UtilsTheme.tres" id="2_qr1hn"]
 
 [node name="01_Logger" type="Node2D" unique_id=1669379984 node_paths=PackedStringArray("messageColorPickerBtn", "messageLineEdit", "customLogBtn", "errorLogBtn", "warningLogBtn", "infoLogBtn")]
-script = ExtResource("1_g1goj")
+script = ExtResource("1_b8b04")
 messageColorPickerBtn = NodePath("CanvasLayer/TextBox/ColorPickerButton")
 messageLineEdit = NodePath("CanvasLayer/TextBox/LineEdit")
 customLogBtn = NodePath("CanvasLayer/Buttons/LogMsg")
@@ -64,14 +64,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
-theme = ExtResource("2_ojkqu")
+theme = ExtResource("2_qr1hn")
 color = Color(1, 1, 1, 1)
 
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer/TextBox" unique_id=1501286272]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
-theme = ExtResource("2_ojkqu")
+theme = ExtResource("2_qr1hn")
 placeholder_text = "Write your custom message"
 
 [node name="Buttons" type="VBoxContainer" parent="CanvasLayer" unique_id=1010601559]
@@ -95,7 +95,7 @@ custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
-theme = ExtResource("2_ojkqu")
+theme = ExtResource("2_qr1hn")
 text = "Print as Msg"
 
 [node name="LogError" type="Button" parent="CanvasLayer/Buttons" unique_id=1806069840]
@@ -103,7 +103,7 @@ custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
-theme = ExtResource("2_ojkqu")
+theme = ExtResource("2_qr1hn")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Buttons/LogError" unique_id=1488722015]
 layout_mode = 1
@@ -124,7 +124,7 @@ custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
-theme = ExtResource("2_ojkqu")
+theme = ExtResource("2_qr1hn")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Buttons/LogWarning" unique_id=2096014257]
 layout_mode = 1
@@ -145,7 +145,7 @@ custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
-theme = ExtResource("2_ojkqu")
+theme = ExtResource("2_qr1hn")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Buttons/LogInfo" unique_id=1425643452]
 layout_mode = 1

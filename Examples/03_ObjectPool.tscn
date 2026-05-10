@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://7rqwqwmlbddm"]
+
+[ext_resource type="Script" uid="uid://d2awumhdpsuc2" path="res://Examples/Scripts/ObjectPoolExample.cs" id="1_36pg2"]
+[ext_resource type="Script" uid="uid://bksg8e16livc5" path="res://Scripts/Common/ObjectPool.cs" id="2_7t54k"]
+[ext_resource type="PackedScene" uid="uid://bvu4m3p5r5v25" path="res://Examples/Props/Ball.tscn" id="3_7t54k"]
+
+[sub_resource type="Animation" id="Animation_ah6qi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpawnPoint:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 128)]
+}
+
+[sub_resource type="Animation" id="Animation_8ggkk"]
+resource_name = "move_spawn"
+length = 40.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpawnPoint:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10, 20, 30, 40),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 128), Vector2(568, 128), Vector2(1152, 128), Vector2(568, 128), Vector2(0, 128)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fv3eh"]
+_data = {
+&"RESET": SubResource("Animation_ah6qi"),
+&"move_spawn": SubResource("Animation_8ggkk")
+}
+
+[node name="03_ObjectPool" type="Node" unique_id=537175625 node_paths=PackedStringArray("movingSpawnPoint")]
+script = ExtResource("1_36pg2")
+movingSpawnPoint = NodePath("SpawnPoint")
+
+[node name="ObjectPool_Balls" type="Node" parent="." unique_id=2042281236]
+script = ExtResource("2_7t54k")
+sceneToSpawn = ExtResource("3_7t54k")
+initialAmount = 30
+
+[node name="SpawnPoint" type="Node2D" parent="." unique_id=166282068]
+position = Vector2(0, 128)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1942163597]
+position = Vector2(576, 328)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1136894828]
+libraries/ = SubResource("AnimationLibrary_fv3eh")
+autoplay = &"move_spawn"
+speed_scale = 5.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=542771005]
+offset_left = -49.0
+offset_top = -63.0
+offset_right = 1190.0
+offset_bottom = 719.0
+color = Color(0.072842635, 0.072842635, 0.072842635, 1)

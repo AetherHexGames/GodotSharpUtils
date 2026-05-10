@@ -1,8 +1,8 @@
 using Godot;
 
-namespace AetherHex.Utils.Logger.Tests
+namespace AetherHex.Utils.Logger.Examples
 {
-	public partial class LoggerTest : Node
+	public partial class LoggerExample : Node
 	{
 		[ExportGroup("Message Textbox")]
 		[Export] private ColorPickerButton messageColorPickerBtn;

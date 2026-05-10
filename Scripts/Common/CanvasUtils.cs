@@ -1,15 +1,16 @@
-using System.Collections;
-using System.Threading.Tasks;
 using Godot;
 
-public static class CanvasUtils
+namespace AetherHex.Utils.Common
 {
-    public static void ModulateAlpha(Control node, float targetAlpha, float time = 1f)
+    public static class CanvasUtils
     {
-        var tween = node.GetTree().CreateTween();
-        tween.TweenProperty(node, "modulate:a", targetAlpha, time).Finished += () =>
+        public static void ModulateAlpha(Control node, float targetAlpha, float time = 1f)
         {
-            tween.Kill();
-        };
+            var tween = node.GetTree().CreateTween();
+            tween.TweenProperty(node, "modulate:a", targetAlpha, time).Finished += () =>
+            {
+                tween.Kill();
+            };
+        }
     }
 }

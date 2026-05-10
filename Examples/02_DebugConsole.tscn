@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://syle34b87hi1"]
 
-[ext_resource type="Script" uid="uid://bawa0fqso2g4a" path="res://Scripts/Tests/DebugConsoleTest.cs" id="1_ybvbc"]
+[ext_resource type="Script" uid="uid://bawa0fqso2g4a" path="res://Examples/Scripts/DebugConsoleTest.cs" id="1_ybvbc"]
+[ext_resource type="PackedScene" uid="uid://blyrqetokm0br" path="res://Examples/DebugConsole.tscn" id="2_x377v"]
 
 [node name="02_DebugConsole" type="Node2D" unique_id=1161171935]
 script = ExtResource("1_ybvbc")
+debugConsole = ExtResource("2_x377v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=24244569]
 layer = 0
